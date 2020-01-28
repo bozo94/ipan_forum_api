@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :ipan_forum_api, IpanForumApi.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "1234",
   database: "ipan_forum_api_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
