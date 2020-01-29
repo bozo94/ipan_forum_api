@@ -5,8 +5,10 @@ defmodule IpanForumApiWeb.Api.V1.RoomView do
     %{data: render_many(rooms, IpanForumApiWeb.Api.V1.RoomView, "room.json")}
   end
 
-  def render("show.json", %{room: room}) do
-    %{data: render_one(room, IpanForumApiWeb.Api.V1.RoomView, "room.json")}
+  def render("show.json", %{room: room, themes: themes}) do
+    %{room: render_one(room, IpanForumApiWeb.Api.V1.RoomView, "room.json"),
+      themes: render_many(themes, IpanForumApiWeb.Api.V1.ThemeView, "theme.json")
+  }
   end
 
   def render("room.json", %{room: room}) do

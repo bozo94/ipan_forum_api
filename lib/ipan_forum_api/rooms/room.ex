@@ -4,6 +4,7 @@ defmodule IpanForumApi.Rooms.Room do
 
   schema "rooms" do
     field :name, :string
+    has_many :themes, IpanForumApi.Themes.Theme, on_delete: :delete_all
     timestamps()
   end
 
