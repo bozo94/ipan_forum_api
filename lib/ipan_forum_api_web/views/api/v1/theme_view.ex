@@ -5,8 +5,9 @@ defmodule IpanForumApiWeb.Api.V1.ThemeView do
     %{data: render_many(themes, IpanForumApiWeb.Api.V1.ThemeView, "theme.json")}
   end
 
-  def render("show.json", %{theme: theme}) do
+  def render("show.json", %{theme: theme, room: room, posts: posts}) do
     %{theme: render_one(theme, IpanForumApiWeb.Api.V1.ThemeView, "theme.json"),
+      posts: render_many(posts, IpanForumApiWeb.Api.V1.PostView, "post.json")    
   }
   end
 
