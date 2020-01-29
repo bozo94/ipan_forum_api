@@ -13,5 +13,6 @@ defmodule IpanForumApi.Repo.Migrations.CreateUsers do
       add :phone, :string
       timestamps()
     end
+    create unique_index(:users, [:username])
   end
 end
