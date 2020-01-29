@@ -2,8 +2,7 @@ defmodule IpanForumApi.Repo.Migrations.CreateRooms do
   use Ecto.Migration
 
   def change do
-    create table(:rooms, primary_key: false) do
-      add :id, :binary_id, primary_key: true
+    create table(:rooms) do
       add :name, :string
 
       timestamps()
