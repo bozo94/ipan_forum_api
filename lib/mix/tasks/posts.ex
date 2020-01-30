@@ -12,7 +12,6 @@ defmodule Mix.Tasks.Posts do
     Mix.Task.run("app.start")
     admin = Accounts.get_by_username("admin")
     {:ok, post_body} = File.read("lib/mix/tasks/stuff/post_body.html")
-    user_id = 
     Themes.list_themes
     |>Enum.each(fn(theme) -> 
         Enum.each(0..5, fn(counter) ->
