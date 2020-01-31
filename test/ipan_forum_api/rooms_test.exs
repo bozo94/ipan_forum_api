@@ -10,6 +10,7 @@ defmodule IpanForumApi.RoomsTest do
     @update_attrs %{name: "some updated name"}
     @invalid_attrs %{name: nil}
 
+    # You can use libraries like ExMachina to create reusable factories (similar to FactoryBot)
     def room_fixture(attrs \\ %{}) do
       {:ok, room} =
         attrs
