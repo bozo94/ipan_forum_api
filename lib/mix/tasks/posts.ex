@@ -13,15 +13,15 @@ defmodule Mix.Tasks.Posts do
     admin = Accounts.get_by_username("admin")
     {:ok, post_body} = File.read("lib/mix/tasks/stuff/post_body.html")
     Themes.list_themes
-    |>Enum.each(fn(theme) -> 
+    |>Enum.each(fn(theme) ->
         Enum.each(0..5, fn(counter) ->
           post_params = %{
-                            name: "#{theme.name} - Post #{counter}", 
+                            name: "#{theme.name} - Post #{counter}",
                             theme_id: theme.id,
                             body: post_body,
                             user_id: admin.id
-                          } 
-          case Posts.create_post(post_params) do 
+                          }
+          case Posts.create_post(post_params) do
             {:ok, post} ->
               Logger.info "Post #{post.name} created successfully"
             {:error, changeset} ->
